@@ -1,0 +1,738 @@
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Ubuntu';
+	background-color: hsl(206, 94%, 87%);
+}
+
+#container {
+	background-image: url('assets/images/bg-sidebar-mobile.svg');
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	background-size: contain;
+}
+
+header {
+}
+
+nav {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	padding-top: 6%;
+}
+
+.nav-bar ul, .nav-bar li, .nav-bar a{
+	display: flex;
+	list-style: none;
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+	gap: 25px;
+}
+.nav-bar a{
+	border: 1px solid white;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.navDetail {
+	display: none;
+}
+
+#page {
+	background-color: hsl(206, 94%, 87%);
+	border-color: transparent;
+	color: hsl(213, 96%, 18%);
+}
+
+#content {
+	width: 100%;
+	margin-top: 11%;
+	border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* PERSONAL PAGE */
+
+#personalContainer {
+	width: 100%;
+	display: block;
+}
+
+#personalContent {
+	width: 90%;
+	margin: auto;
+	background-color: white;
+	padding-bottom: 25px;
+	border-radius: 10px;
+}
+
+.title {
+	font-weight: 700;
+	color: hsl(213, 96%, 18%);
+	font-size: 7vw;
+	padding: 25px 0 0 5%;
+}
+
+.titleDesc{
+	font-weight: 500;
+	color: hsl(231, 11%, 63%);
+	width: 80%;
+	padding: 15px 5%;
+}
+
+#personal label {
+	color: hsl(213, 96%, 18%);
+	font-weight: 500;
+	padding-left: 5%;
+}
+
+#personal input {
+	padding: 10px;
+	border-color: hsl(229, 24%, 87%);
+	border-radius: 5px;
+	margin-bottom: 15px;
+	margin-left: 5%;
+	width: 90%;
+}
+
+#button {
+	background-color: white;
+	width: 100%;
+	height: 10%;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 5%;
+}
+
+#next {
+	padding: 10px;
+	background-color: hsl(213, 96%, 18%);
+	color: white;
+	font-size: 4vw;
+	border-color: transparent;
+	border-radius: 5px;
+	font-weight: 700;
+	cursor: pointer;
+}
+#next:hover{
+	color: cyan;
+}
+#next:active {
+	background-color: lightskyblue;
+}
+
+#back {
+	font-size: 4vw;
+	color: hsl(231, 11%, 63%);
+	background-color: transparent;
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+}
+#back:hover {
+	color: hsl(213, 96%, 18%);
+}
+
+/* PLAN PAGE */
+
+#planContainer {
+	width: 100%;
+	display: none;
+}
+
+#planContent {
+	width: 90%;
+	margin: auto;
+	background-color: white;
+	padding-bottom: 25px;
+	border-radius: 10px;
+}
+
+#planBox{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.plan-choice {
+	display: flex;
+	gap: 10px;
+	padding: 10px;
+	border: 1px solid hsl(229, 24%, 87%);
+	border-radius: 5px;
+	margin-left: 5%;
+	width: 90%;
+	-webkit-transition: .4s;
+  	transition: .4s
+}
+
+.plan-detail {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.plan-name {
+	color: hsl(213, 96%, 18%);
+	font-weight: 700;
+	font-size: 5vw;
+}
+
+.plan-price {
+	color: hsl(231, 11%, 63%);
+	font-weight: 500;
+}
+
+.free {
+	color: hsl(213, 96%, 18%);
+	font-size: 3vw;
+	display: none;
+}
+
+.option {
+	width: 90%;
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 5%;
+	background-color: hsl(217, 100%, 97%);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.monthly{
+	font-weight: 700;
+	color: hsl(213, 96%, 18%);
+}
+
+.yearly {
+	font-weight: 700;
+	color: hsl(231, 11%, 63%);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+#switchOn:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+#switchOn:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* ADD PAGE */
+
+#addContainer {
+	width: 100%;
+	display: none;
+}
+
+#addContent {
+	width: 90%;
+	margin: auto;
+	background-color: white;
+	padding-bottom: 25px;
+	border-radius: 10px;
+}
+
+.addChoice {
+	display: flex;
+	gap: 10px;
+	padding: 10px;
+	border: 1px solid hsl(229, 24%, 87%);
+	border-radius: 5px;
+	margin-left: 5%;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+label[for="online"], label[for="storage"], label[for="custom"]{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.addDetail{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.addName {
+	color: hsl(213, 96%, 18%);
+	font-weight: 700;
+	font-size: 4vw;
+}
+.addDesc {
+	color: hsl(231, 11%, 63%);
+	font-weight: 500;
+	font-size: 3vw;
+}
+.addPrice {
+	color: hsl(243, 100%, 62%);
+	font-size: 3vw;
+}
+
+.addChoice input[type="checkbox"]{
+	accent-color: hsl(243, 100%, 62%);
+	width: 20px;
+}
+
+/* FINISHING PAGE */
+
+#finishContainer {
+	width: 100%;
+	display: none;
+}
+
+#finishContent {
+	width: 90%;
+	margin: auto;
+	background-color: white;
+	padding-bottom: 25px;
+	border-radius: 10px;
+}
+
+.finishPriceDetail {
+	padding: 10px;
+	border-radius: 5px;
+	margin-left: 5%;
+	width: 90%;
+	margin-bottom: 10px;
+	background-color: hsl(217, 100%, 97%);
+}
+
+.finishPlan {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.finishPlanName, .finishPlanPrice {
+	color: hsl(213, 96%, 18%);
+	font-weight: 700;
+}
+.change a{
+	color: hsl(231, 11%, 63%);
+}
+
+.finishAdd {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.finishAddName, .finishAddPrice {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.addName1, .addName2, .addName3 {
+	color: hsl(231, 11%, 63%);
+}
+.addPrice1, .addPrice2, .addPrice3 {
+	color: hsl(213, 96%, 18%);
+}
+.finishTotal {
+	padding: 10px;
+	margin-left: 5%;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+}
+.totalTitle {
+	color: hsl(231, 11%, 63%);
+}
+.totalPriceText {
+	color: hsl(243, 100%, 62%);
+	font-weight: 700;
+}
+
+#confirm {
+	padding: 10px;
+	background-color: hsl(243, 100%, 62%);
+	color: white;
+	font-size: 4vw;
+	border-color: transparent;
+	border-radius: 5px;
+	font-weight: 700;
+}
+
+/*THANK YOU PAGE*/
+
+#thankYouContainer {
+	width: 100%;
+	display: none;
+}
+
+#thankYouContent {
+	width: 90%;
+	margin: auto;
+	background-color: white;
+	padding-bottom: 25px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#thankYouContent img {
+	width: 80px;
+	margin-top: 10%;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 375px){
+	#container{
+		height: 100%;
+	}
+	#planContent{
+		padding-bottom: 12.5px;
+	}
+	#planBox {
+		gap: 5px;
+	}
+	.title {
+		font-size: 6vw;
+	}
+	#personal label, #personal input, .titleDesc, .plan-name, .plan-price, .monthly, .yearly  {
+		font-size: 4vw;
+	}
+	#personal input {
+		padding: 5px;
+		margin-bottom: 5px;
+	}
+	.plan-choice{
+		padding: 5px;
+	}
+	.plan-detail{
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+	}
+	.plan-choice img {
+	 	width: 25px;
+	}
+	.option{
+		height: 25px;
+		margin-top: 5px;
+	}
+	.switch {
+		width: 35px;
+		height: 15px;
+	}
+	.slider:before{
+		width: 8px;
+		height: 8px;
+	}
+	#switchOn:checked + .slider:before {
+	  -webkit-transform: translateX(18px);
+	  -ms-transform: translateX(18px);
+	  transform: translateX(18px);
+	}
+	.finishPlanName {
+		font-size: 4vw;
+	}
+	.finishPlanPrice{
+		font-size: 4vw;
+	}
+	.change {
+		font-size: 4vw;
+	}
+	.addName1, .addName2, .addName3, .addPrice1, .addPrice2, .addPrice3, .totalTitle, .totalPriceText{
+		font-size: 4vw;
+	}
+	.finishPlan{
+		margin-bottom: 10px;
+	}
+	.finishAdd {
+		margin-top: 10px;
+	}
+	.finishAddName, .finishAddPrice {
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+	}
+	#finishContent{
+		padding-bottom: 12.5px;
+	}
+}
+
+@media (min-width: 768px){
+	body {
+		background-color: pink;
+	}
+	#container {
+		background-image: url('assets/images/bg-sidebar-mobile.svg');
+		background-repeat: no-repeat;
+		width: 90%;
+		height: 90vh;
+		margin: 5vh 5%;
+		background-size: contain;
+		background-color: hsl(206, 94%, 87%);
+		position: relative;
+		border-radius: 10px;
+	}
+	#button {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	.nav-bar ul, .nav-bar li, .nav-bar a{
+		font-size: 5vw;
+	}
+	.nav-bar a {
+		width: 50px;
+		height: 50px;
+		border: 2px solid white;
+	}
+	.title {
+		font-size: 1vw;
+	}
+	.titleDesc{
+		font-size: 3vw;
+	}
+	#personal label{
+		font-size: 3vw;
+	}
+	#personal input {
+		padding: 20px;
+		font-size: 3vw;
+	}
+	.plan-name, .addName, #arcadePrice, #advancedPrice, #proPrice {
+		font-size: 3vw;
+	}
+	#onlineBox, #storageBox, #customBox {
+		margin-bottom: 20px;
+	}
+	.free {
+		font-size: 2vw;
+	}
+	.finishPlanName {
+		font-size: 4vw;
+	}
+	.finishPlanPrice{
+		font-size: 3vw;
+	}
+	.change {
+		font-size: 3vw;
+	}
+	.addName1, .addName2, .addName3, .addPrice1, .addPrice2, .addPrice3, .totalTitle, .totalPriceText{
+		font-size: 3vw;
+	}
+}
+
+@media (min-width: 1114px){
+	#container {
+		background-image: url('assets/images/bg-sidebar-desktop.svg');
+		background-repeat: no-repeat;
+		width: 80%;
+		height: 80vh;
+		margin: 10vh 10%;
+		background-size: contain;
+		background-color: white;
+		border-radius: 10px;
+		position: absolute;
+	}
+	nav {
+		width: 25%;
+		height: 50%;
+		position: absolute;
+		padding-top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.nav-bar ul{
+		display: flex;
+		flex-direction: column;
+		font-size: 1vw;
+	}
+	.nav-bar li, .nav-bar a{
+		font-size: 1vw;
+	}
+	.nav-bar a{
+		width: 35px;
+		height: 35px;
+	}
+	#content {
+		height: 100%;
+		margin-top: 0;
+		width: 72%;
+		margin-left: 28%;
+	}
+	#personalContainer{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+	#planContainer, #addContainer, #finishContainer{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: none;
+		align-items: center;
+	}
+	#personalContent, #planContent, #addContent, #finishContent{
+		background-color: transparent;
+	}
+	#button {
+		position: absolute;
+		width: 100%;
+		padding-right: 8%;
+		padding-left: 8%;
+	}
+	#next, #back, #confirm {
+		font-size: 1vw;
+		padding: 15px;
+		border-radius: 10px;
+	}
+	.navLink {
+		display: flex;
+		flex-direction: row;
+		font-size: 1vw;
+	}
+	.navDetail {
+		display: block;
+	}
+	.stepNumber {
+		color: hsl(231, 11%, 63%);
+	}
+	.title {
+		font-size: 3vw;
+	}
+	.titleDesc {
+		font-size: 2vw;
+		margin-bottom: 20px;
+	}
+	.plan-name {
+		font-size: 2vw;
+	}
+	#planBox{
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+	}
+	.plan-choice{
+		display: flex;
+		flex-direction: column;
+		gap: 80px;
+		width: 25%;
+	}
+	.plan-choice img {
+		width: 50px;
+	}
+	.free {
+		font-size: 1vw;
+	}
+	#arcadePrice, #advancedPrice, #proPrice {
+		font-size: 1.5vw;
+	}
+	.addName {
+		font-size: 2vw;
+	}
+	.addDesc {
+		font-size: 1.5vw;
+	}
+	.addPrice {
+		font-size: 1.5vw;
+	}
+	#personal label{
+		font-size: 1.5vw;
+	}
+	#personal input {
+		padding: 20px;
+		margin-bottom: 30px;
+		font-size: 1.5vw;
+	}
+	.finishPlanName, .finishPlanPrice, .change, .addName1, .addName2, .addName3, .addPrice1, .addPrice2, .addPrice3, .totalTitle, .totalPriceText{
+		font-size: 1.5vw;
+	}
+}
+
+@media (min-width: 1920px){
+	.titleDesc {
+		font-size: 1vw;
+	}
+	.plan-name, .addName {
+		font-size: 1vw;
+	}
+	.addDesc, .addPrice{
+		font-size: 0.8vw;
+	}
+	.free {
+		font-size: 0.8vw;
+	}
+	#personal label{
+		font-size: 1vw;
+	}
+	#personal input{
+		font-size: 1vw;
+	}
+	#arcadePrice, #advancedPrice, #proPrice {
+		font-size: 0.8vw;
+	}
+	.finishPlanName, .finishPlanPrice, .change, .addName1, .addName2, .addName3, .addPrice1, .addPrice2, .addPrice3, .totalTitle, .totalPriceText{
+		font-size: 1vw;
+	}
+}
